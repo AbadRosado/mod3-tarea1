@@ -3,6 +3,11 @@ import express from 'express';
 import cors from 'cors';    
 import 'express-async-errors';
 import morgan from 'morgan';
+import { loggerMiddleware } from './presentation/middlewares/logger.middleware.js';
+import noteRoutes from './presentation/routes/note.routes.js';
+import { connectMongo } from './infrastucture/database/mongo/conection.js';
+import { connectMysql } from './infraestructure/database/mysql/connection.js';
+
 const app = express();
 
 app.use(cors());
